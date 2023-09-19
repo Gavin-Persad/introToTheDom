@@ -1,10 +1,27 @@
-# Intro to the DOM
+# DOM Workshop ✨
 
-...
+Welcome to the DOM workshop! 👋 This workshop will provide hands-on experience working with the Document Object Model (DOM) in JavaScript. The DOM allows us to manipulate HTML and CSS using JavaScript.
 
-## Tickets
+In this workshop, you will learn:
 
-These tickets will test your understanding of the concepts discussed in the live session. Each ticket provides a task and an expected outcome. Try to solve them using your knowledge of the DOM!
+- How to select DOM elements using different selectors like getElementById, querySelector, etc. 🎯
+- How to modify text, HTML attributes, styles of DOM elements 🖌  
+- How to add, remove, and replace DOM elements ➕ ➖
+- How to create new DOM elements and add them to the page 👷‍♂️
+
+The workshop contains examples and exercises to help you practice DOM manipulation. 💪 By the end of this workshop, you will have the skills to dynamically update web pages using JavaScript like a pro! 😎
+
+## Getting Started
+
+1. Create a `index.js` file. 
+
+2. Properly link `index.js` in your HTML document.
+
+3. Check your javascript file is linked correctly by adding code to log a message:
+
+```js
+console.log("Linked!");
+```
 
 ### Ticket 1: Selecting DOM Elements
 
