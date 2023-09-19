@@ -5,6 +5,7 @@ Welcome to the DOM workshop! 👋 This workshop will provide hands-on experience
 In this workshop, you will learn:
 
 - How to select DOM elements using different selectors like getElementById, querySelector, etc. 🎯
+- Traverse the DOM tree using properties like `parentNode`, `childNodes`, `children`, `firstChild`, `lastChild`, `nextSibling`, and `previousSibling`.
 - How to modify text, HTML attributes, styles of DOM elements 🖌  
 - How to add, remove, and replace DOM elements ➕ ➖
 - How to create new DOM elements and add them to the page 👷‍♂️
@@ -15,13 +16,19 @@ The workshop contains examples and exercises to help you practice DOM manipulati
 
 1. Create a `index.js` file. 
 
-2. Properly link `index.js` in your HTML document.
+2. Properly link `index.js` in your HTML document. *ask Google or Tutorbot, if you need help with this!*
 
 3. Check your javascript file is linked correctly by adding code to log a message:
 
 ```js
 console.log("Linked!");
 ```
+
+If you can't see your messages, double check the following:
+
+1. Your file path is correct.
+2. Your script tag is after the body tag of your html document or uses the defer attribute.
+3. Make sure to save the file and refresh the page.
 
 ### Ticket 1: Selecting DOM Elements
 
