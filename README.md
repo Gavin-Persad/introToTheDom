@@ -5,7 +5,7 @@ Welcome to the DOM workshop! 👋 This workshop will provide hands-on experience
 In this workshop, you will learn:
 
 - How to select DOM elements using different selectors like getElementById, querySelector, etc. 🎯
-- Traverse the DOM tree using properties like `parentNode`, `childNodes`, `children`, `firstChild`, `lastChild`, `nextSibling`, and `previousSibling`.
+- Traverse the DOM tree using properties like `parentNode`, `childNodes`, `children`, `firstChild`, and`lastChild`.
 - How to modify text, HTML attributes, styles of DOM elements 🖌  
 - How to add, remove, and replace DOM elements ➕ ➖
 - How to create new DOM elements and add them to the page 👷‍♂️
@@ -109,15 +109,6 @@ If you can't see your messages, double check the following:
   - Log both child nodes to the console.
 - **Expected Outcome**:
   - The console should display two nodes. Depending on the formatting of your HTML, the first may be a text node (whitespace or line break). The last should be the `<li>` element with the content "🍈 Fig".
-
-#### Ticket 2e: Sibling Nodes
-
-- **Instructions**:
-  - Select the `<li>` element with the content "🍒 Cherry".
-  - Use the `nextSibling` and `previousSibling` properties to get the next and previous sibling nodes.
-  - Log both sibling nodes to the console.
-- **Expected Outcome**:
-  - The console should display two `<li>` nodes. The previous should have the content "🍌 Banana" and the next should have the content "🍇 Date".
 
 ### Ticket 3: Manipulating the DOM
 
