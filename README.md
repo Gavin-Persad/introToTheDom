@@ -14,7 +14,11 @@ The workshop contains examples and exercises to help you practice DOM manipulati
 
 ## Getting Started
 1. `npm install` - Make sure you are inside this repo in your terminal. This will install
-everything needed for running the tests at the end of the task.
+everything needed for running the tests at the end of ticket 3.
+
+- `git clone <This repo>`
+- `cd <repo name>`
+- `npm install`
 
 2. Create a `index.js` file. 
 
@@ -113,6 +117,8 @@ If you can't see your messages, double check the following:
   - The console should display two nodes. Depending on the formatting of your HTML, the first may be a text node (whitespace or line break). The last should be the `<li>` element with the content "🍈 Fig".
 
 ### Ticket 3: Manipulating the DOM
+**Ticket 3 has automatic testing set up - so after completing all of its sections run `npm test` in your terminal and you will
+get that lovely green checkmark if you pass. It will also tell you which ticket you haven't passed if you get one slightly wrong.**
 
 #### Ticket 3a: Styling Elements
 
