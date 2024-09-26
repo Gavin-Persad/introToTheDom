@@ -13,12 +13,14 @@ In this workshop, you will learn:
 The workshop contains examples and exercises to help you practice DOM manipulation. 💪 By the end of this workshop, you will have the skills to dynamically update web pages using JavaScript like a pro! 😎
 
 ## Getting Started
+1. `npm install` - Make sure you are inside this repo in your terminal. This will install
+everything needed for running the tests at the end of the task.
 
-1. Create a `index.js` file. 
+2. Create a `index.js` file. 
 
-2. Properly link `index.js` in your HTML document. *ask Google or Tutorbot, if you need help with this!*
+3. Properly link `index.js` in your HTML document. *ask Google or Tutorbot, if you need help with this!*
 
-3. Check your javascript file is linked correctly by adding code to log a message:
+4. Check your javascript file is linked correctly by adding code to log a message:
 
 ```js
 console.log("Linked!");
