@@ -13,12 +13,9 @@ In this workshop, you will learn:
 The workshop contains examples and exercises to help you practice DOM manipulation. 💪 By the end of this workshop, you will have the skills to dynamically update web pages using JavaScript like a pro! 😎
 
 ## Getting Started
+1. We have provided an index.js file but haven't linked it up to the html. Please get linking.
 
-1. Create a `index.js` file. 
-
-2. Properly link `index.js` in your HTML document. *ask Google or Tutorbot, if you need help with this!*
-
-3. Check your javascript file is linked correctly by adding code to log a message:
+2. Check your javascript file is linked correctly by adding code to log a message:
 
 ```js
 console.log("Linked!");
@@ -105,10 +102,10 @@ If you can't see your messages, double check the following:
 
 - **Instructions**:
   - Select the `<ul>` element with the id of "itemList".
-  - Use the `firstChild` and `lastChild` properties to get the first and last child nodes.
+  - Use the `firstElementChild` and `lastElementChild` properties to get the first and last child nodes.
   - Log both child nodes to the console.
 - **Expected Outcome**:
-  - The console should display two nodes. Depending on the formatting of your HTML, the first may be a text node (whitespace or line break). The last should be the `<li>` element with the content "🍈 Fig".
+  - The console should display two nodes. The last should be the `<li>` element with the content "🍈 Fig".
 
 ### Ticket 3: Manipulating the DOM
 **Ticket 3 has automatic testing set up - so after completing all of its sections run `npm test` in your terminal and you will
