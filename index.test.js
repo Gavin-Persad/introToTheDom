@@ -70,8 +70,8 @@ describe("index.js", () => {
 		document.dispatchEvent(new Event("DOMContentLoaded"));
 		const contentElements = document.getElementsByClassName("content");
 		expect(contentElements.length).toBe(2);
-		expect(contentElements[0].textContent).toBe(
-			'This is a paragraph with the class "content".',
+		expect(contentElements[0].textContent).toMatch(
+			/This is a paragraph with the class "content"\.|This paragraph has been updated\./,
 		);
 		expect(contentElements[1].textContent).toBe(
 			'This is another paragraph with the class "content" and "highlight".',
@@ -97,12 +97,19 @@ describe("index.js", () => {
 		// Simulate DOMContentLoaded event to run the script
 		document.dispatchEvent(new Event("DOMContentLoaded"));
 		const liElements = document.getElementsByTagName("li");
-		expect(liElements.length).toBe(5);
-		expect(liElements[0].textContent).toBe("🍎 Apple");
-		expect(liElements[1].textContent).toBe("🍌 Banana");
-		expect(liElements[2].textContent).toBe("🍒 Cherry");
-		expect(liElements[3].textContent).toBe("🍇 Date");
-		expect(liElements[4].textContent).toBe("🍈 Fig");
+		expect(liElements.length === 5 || liElements.length === 4).toBe(true);
+		if (liElements.length === 5) {
+			expect(liElements[0].textContent).toBe("🍎 Apple");
+			expect(liElements[1].textContent).toBe("🍌 Banana");
+			expect(liElements[2].textContent).toBe("🍒 Cherry");
+			expect(liElements[3].textContent).toBe("🍇 Date");
+			expect(liElements[4].textContent).toBe("🍈 Fig");
+		} else if (liElements.length === 4) {
+			expect(liElements[0].textContent).toBe("🍎 Apple");
+			expect(liElements[1].textContent).toBe("🍌 Banana");
+			expect(liElements[2].textContent).toBe("🍒 Cherry");
+			expect(liElements[3].textContent).toBe("🍈 Fig");
+		}
 		expect(consoleLogSpy).toHaveBeenCalledWith(liElements);
 		consoleLogSpy.mockRestore();
 	});
@@ -200,7 +207,7 @@ describe("index.js", () => {
 		const children = ulElement.children;
 
 		expect(getElementByIdSpy).toHaveBeenCalledWith("itemList");
-		expect(children.length).toBe(5);
+		expect(children.length === 5 || children.length === 4).toBe(true);
 		getElementByIdSpy.mockRestore();
 	});
 
@@ -213,12 +220,19 @@ describe("index.js", () => {
 		const ulElement = document.getElementById("itemList");
 		const children = ulElement.children;
 
-		expect(children.length).toBe(5);
-		expect(children[0].tagName).toBe("LI");
-		expect(children[1].tagName).toBe("LI");
-		expect(children[2].tagName).toBe("LI");
-		expect(children[3].tagName).toBe("LI");
-		expect(children[4].tagName).toBe("LI");
+		expect(children.length === 5 || children.length === 4).toBe(true);
+		if (children.length === 5) {
+			expect(children[0].tagName).toBe("LI");
+			expect(children[1].tagName).toBe("LI");
+			expect(children[2].tagName).toBe("LI");
+			expect(children[3].tagName).toBe("LI");
+			expect(children[4].tagName).toBe("LI");
+		} else if (children.length === 4) {
+			expect(children[0].tagName).toBe("LI");
+			expect(children[1].tagName).toBe("LI");
+			expect(children[2].tagName).toBe("LI");
+			expect(children[3].tagName).toBe("LI");
+		}
 
 		expect(consoleLogSpy).toHaveBeenCalledWith(children);
 		consoleLogSpy.mockRestore();
@@ -264,43 +278,43 @@ describe("index.js", () => {
 		consoleLogSpy.mockRestore();
 	});
 
-	// // Tests for ticket 3
-	// test("Ticke 3a: The heading 'Intro to the DOM' should appear in red and its font size should be 30px", () => {
-	// 	const title = document.getElementById("title");
-	// 	expect(title.style.color).toBe("red");
-	// 	expect(title.style.fontSize).toBe("30px");
-	// });
+	// Tests for ticket 3
+	test("3a) The heading 'Intro to the DOM' should appear in red and its font size should be 30px", () => {
+		const title = document.getElementById("title");
+		expect(title.style.color).toBe("red");
+		expect(title.style.fontSize).toBe("30px");
+	});
 
-	// test("Ticket 3b: A new paragraph with the text 'This is a dynamically added paragraph.' should appear at the bottom of the page.", () => {
-	// 	const paragraph = document.querySelector("body > p:last-child");
-	// 	expect(paragraph).not.toBeNull();
-	// 	expect(paragraph.textContent).toBe(
-	// 		"This is a dynamically added paragraph.",
-	// 	);
-	// });
-	// test("Ticket 3c: The text of the first paragraph with class 'content' should now read 'This paragraph has been updated.'", () => {
-	// 	const firstContentParagraph = document.querySelector("p.content");
-	// 	expect(firstContentParagraph.textContent).toBe(
-	// 		"This paragraph has been updated.",
-	// 	);
-	// });
-	// test("Ticket 3d: The second paragraph with class 'content' should have a title attribute with the value 'Hover over me!'", () => {
-	// 	const secondContentParagraph = document.querySelectorAll("p.content")[1];
-	// 	expect(secondContentParagraph.getAttribute("title")).toBe("Hover over me!");
-	// });
-	// test("Ticket 3e: The <ul> element with the id 'itemList' should have an additional class 'styled-list'. The <li> with the content '🍌 Banana' should no longer have the class 'list-item'.", () => {
-	// 	const itemList = document.getElementById("itemList");
-	// 	expect(itemList.classList.contains("styled-list")).toBe(true);
+	test("3b) A new paragraph with the text 'This is a dynamically added paragraph.' should appear at the bottom of the page.", () => {
+		const paragraph = document.querySelector("body > p:last-child");
+		expect(paragraph).not.toBeNull();
+		expect(paragraph.textContent).toBe(
+			"This is a dynamically added paragraph.",
+		);
+	});
+	test("3c) The text of the first paragraph with class 'content' should now read 'This paragraph has been updated.'", () => {
+		const firstContentParagraph = document.querySelector("p.content");
+		expect(firstContentParagraph.textContent).toBe(
+			"This paragraph has been updated.",
+		);
+	});
+	test("3d) The second paragraph with class 'content' should have a title attribute with the value 'Hover over me!'", () => {
+		const secondContentParagraph = document.querySelectorAll("p.content")[1];
+		expect(secondContentParagraph.getAttribute("title")).toBe("Hover over me!");
+	});
+	test("3e) The <ul> element with the id 'itemList' should have an additional class 'styled-list'. The <li> with the content '🍌 Banana' should no longer have the class 'list-item'.", () => {
+		const itemList = document.getElementById("itemList");
+		expect(itemList.classList.contains("styled-list")).toBe(true);
 
-	// 	const bananaItem = Array.from(itemList.children).find(
-	// 		(li) => li.textContent === "🍌 Banana",
-	// 	);
-	// 	expect(bananaItem.classList.contains("list-item")).toBe(false);
-	// });
-	// test("Ticket 3f: The <li> element with the content '🍇 Date' should be removed from the DOM.", () => {
-	// 	const dateItem = Array.from(document.querySelectorAll("li")).find(
-	// 		(li) => li.textContent === "🍇 Date",
-	// 	);
-	// 	expect(dateItem).toBeUndefined();
-	// });
+		const bananaItem = Array.from(itemList.children).find(
+			(li) => li.textContent === "🍌 Banana",
+		);
+		expect(bananaItem.classList.contains("list-item")).toBe(false);
+	});
+	test("3f) The <li> element with the content '🍇 Date' should be removed from the DOM.", () => {
+		const dateItem = Array.from(document.querySelectorAll("li")).find(
+			(li) => li.textContent === "🍇 Date",
+		);
+		expect(dateItem).toBeUndefined();
+	});
 });
