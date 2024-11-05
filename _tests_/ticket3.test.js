@@ -2,13 +2,13 @@ const fs = require("node:fs");
 const path = require("node:path");
 
 // Read the HTML file
-const html = fs.readFileSync(
-	path.resolve(__dirname, "../../index.html"),
-	"utf8"
-);
+const html = fs.readFileSync(path.resolve(__dirname, "../index.html"), "utf8");
 
 // Read the JS file
-const js = fs.readFileSync(path.resolve(__dirname, "../../index.js"), "utf8");
+const js = fs.readFileSync(
+	path.resolve(__dirname, "../index-ticket3.js"),
+	"utf8"
+);
 
 describe("Learning Objective: Manipulating the DOM", () => {
 	beforeAll(() => {

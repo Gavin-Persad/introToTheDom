@@ -4,10 +4,8 @@
 	"description": "Welcome to the DOM workshop! 👋 This workshop will provide hands-on experience working with the Document Object Model (DOM) in JavaScript. The DOM allows us to manipulate HTML and CSS using JavaScript.",
 	"main": "index.js",
 	"scripts": {
-		"test -ticket1": "jest test/ticket1.test.js",
-		"test -ticket2": "jest test/ticket2.test.js",
-		"test -ticket3": "jest test/ticket3.test.js"
-	},
+		"test": "jest"
+	  },
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
