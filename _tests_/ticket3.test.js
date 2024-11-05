@@ -16,6 +16,7 @@ describe("Learning Objective: Manipulating the DOM", () => {
 		const script = document.createElement("script");
 		script.textContent = js;
 		document.body.appendChild(script);
+		document.dispatchEvent(new Event("DOMContentLoaded"));
 	});
 
 	describe("3a: Success Criterion 1: Styling Elements", () => {
