@@ -57,7 +57,7 @@ describe("index.js", () => {
 		test("1b) should use getElementsByClassName('content')", () => {
 			const getElementsByClassNameSpy = jest.spyOn(
 				document,
-				"getElementsByClassName",
+				"getElementsByClassName"
 			);
 			// Simulate DOMContentLoaded event to run the script
 			document.dispatchEvent(new Event("DOMContentLoaded"));
@@ -72,10 +72,10 @@ describe("index.js", () => {
 			const contentElements = document.getElementsByClassName("content");
 			expect(contentElements.length).toBe(2);
 			expect(contentElements[0].textContent).toMatch(
-				/This is a paragraph with the class "content"\.|This paragraph has been updated\./,
+				/This is a paragraph with the class "content"\.|This paragraph has been updated\./
 			);
 			expect(contentElements[1].textContent).toBe(
-				'This is another paragraph with the class "content" and "highlight".',
+				'This is another paragraph with the class "content" and "highlight".'
 			);
 			expect(consoleLogSpy).toHaveBeenCalledWith(contentElements);
 			consoleLogSpy.mockRestore();
@@ -85,7 +85,7 @@ describe("index.js", () => {
 		test("1c) should use getElementsByTagName('li')", () => {
 			const getElementsByTagNameSpy = jest.spyOn(
 				document,
-				"getElementsByTagName",
+				"getElementsByTagName"
 			);
 			// Simulate DOMContentLoaded event to run the script
 			document.dispatchEvent(new Event("DOMContentLoaded"));
@@ -130,7 +130,7 @@ describe("index.js", () => {
 			document.dispatchEvent(new Event("DOMContentLoaded"));
 			const highlightElement = document.querySelector(".highlight");
 			expect(highlightElement.textContent).toBe(
-				'This is another paragraph with the class "content" and "highlight".',
+				'This is another paragraph with the class "content" and "highlight".'
 			);
 			expect(consoleLogSpy).toHaveBeenCalledWith(highlightElement);
 			consoleLogSpy.mockRestore();
@@ -152,7 +152,7 @@ describe("index.js", () => {
 			const highlightElements = document.querySelectorAll(".highlight");
 			expect(highlightElements.length).toBe(3);
 			expect(highlightElements[0].textContent).toBe(
-				'This is another paragraph with the class "content" and "highlight".',
+				'This is another paragraph with the class "content" and "highlight".'
 			);
 			expect(highlightElements[1].textContent).toBe("🍒 Cherry");
 			expect(highlightElements[2].textContent).toBe("🍈 Fig");
@@ -292,21 +292,21 @@ describe("index.js", () => {
 			const paragraph = document.querySelector("body > p:last-child");
 			expect(paragraph).not.toBeNull();
 			expect(paragraph.textContent).toBe(
-				"This is a dynamically added paragraph.",
+				"This is a dynamically added paragraph."
 			);
 		});
 
 		test("3c) The text of the first paragraph with class 'content' should now read 'This paragraph has been updated.'", () => {
 			const firstContentParagraph = document.querySelector("p.content");
 			expect(firstContentParagraph.textContent).toBe(
-				"This paragraph has been updated.",
+				"This paragraph has been updated."
 			);
 		});
 
 		test("3d) The second paragraph with class 'content' should have a title attribute with the value 'Hover over me!'", () => {
 			const secondContentParagraph = document.querySelectorAll("p.content")[1];
 			expect(secondContentParagraph.getAttribute("title")).toBe(
-				"Hover over me!",
+				"Hover over me!"
 			);
 		});
 
@@ -315,14 +315,14 @@ describe("index.js", () => {
 			expect(itemList.classList.contains("styled-list")).toBe(true);
 
 			const bananaItem = Array.from(itemList.children).find(
-				(li) => li.textContent === "🍌 Banana",
+				(li) => li.textContent === "🍌 Banana"
 			);
 			expect(bananaItem.classList.contains("list-item")).toBe(false);
 		});
 
 		test("3f) The <li> element with the content '🍇 Date' should be removed from the DOM.", () => {
 			const dateItem = Array.from(document.querySelectorAll("li")).find(
-				(li) => li.textContent === "🍇 Date",
+				(li) => li.textContent === "🍇 Date"
 			);
 			expect(dateItem).toBeUndefined();
 		});
