@@ -6,16 +6,17 @@ In this workshop, you will learn:
 
 - How to select DOM elements using different selectors like getElementById, querySelector, etc. 🎯
 - Traverse the DOM tree using properties like `parentNode`, `childNodes`, `children`, `firstChild`, and`lastChild`.
-- How to modify text, HTML attributes, styles of DOM elements 🖌  
+- How to modify text, HTML attributes, styles of DOM elements 🖌
 - How to add, remove, and replace DOM elements ➕ ➖
 - How to create new DOM elements and add them to the page 👷‍♂️
 
 The workshop contains examples and exercises to help you practice DOM manipulation. 💪 By the end of this workshop, you will have the skills to dynamically update web pages using JavaScript like a pro! 😎
 
 ## Getting Started
-1. We have provided an index.js file but haven't linked it up to the html. Please get linking.
 
-2. Check your javascript file is linked correctly by adding code to log a message:
+1. We have provided an index.js for each ticket, but haven't linked it up to the html. Please get linking, there are 3 files that you will need to link, one for each ticket, if you have not linked multiple JS files before you should google how to do this. All three files will need to be linked for this to work.
+
+2. Check your javascript files are linked correctly by adding code to log a message:
 
 ```js
 console.log("Linked!");
@@ -26,6 +27,15 @@ If you can't see your messages, double check the following:
 1. Your file path is correct.
 2. Your script tag is after the body tag of your html document or uses the defer attribute.
 3. Make sure to save the file and refresh the page.
+
+4. Once you have completed each ticket you can run the tests for this ticket to check that you have passed the tasks. To run the tests please enter the following into your terminal.
+
+- Ticket 1 - `npm test ticket1.test.js`
+- Ticket 2 - `npm test ticket2.test.js`
+- Ticket 3 - `npm test ticket3.test.js`
+- All tickets - `npm test`
+
+You may need to run a `npm i` to install the testing dependencies first.
 
 ### Ticket 1: Selecting DOM Elements
 
@@ -67,7 +77,14 @@ If you can't see your messages, double check the following:
   - Use `querySelectorAll()` to select all elements with the class "highlight".
   - Log the selected elements to the console.
 - **Expected Outcome**:
+
   - The console should display a collection of three elements: a `<p>` element with the content "This is another paragraph with the class 'content' and 'highlight'" and two `<li>` elements with the content "🍒 Cherry" and "🍈 Fig".
+
+#### Testing
+
+Don't forget you can run a test here to check your work.
+
+- Ticket 1 - `npm test ticket1.test.js`
 
 ### Ticket 2: Traversing the DOM
 
@@ -107,7 +124,14 @@ If you can't see your messages, double check the following:
 - **Expected Outcome**:
   - The console should display two nodes. The last should be the `<li>` element with the content "🍈 Fig".
 
+#### Testing
+
+Don't forget you can run a test here to check your work.
+
+- Ticket 2 - `npm test ticket2.test.js`
+
 ### Ticket 3: Manipulating the DOM
+
 **Ticket 3 has automatic testing set up - so after completing all of its sections run `npm test` in your terminal and you will
 get that lovely green checkmark if you pass. It will also tell you which ticket you haven't passed if you get one slightly wrong.**
 
@@ -162,3 +186,9 @@ get that lovely green checkmark if you pass. It will also tell you which ticket 
   - Remove it from the DOM using JavaScript.
 - **Expected Outcome**:
   - The `<li>` with the content "🍇 Date" should no longer appear in the page.
+
+#### Testing
+
+Don't forget you can run a test here to check your work.
+
+- Ticket 3 - `npm test ticket3.test.js`
